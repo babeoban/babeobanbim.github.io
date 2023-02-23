@@ -16,7 +16,8 @@
     font-family: Arial;
     font-size: 100px;
     text-align: center;
-    animation: fadeIn 2s;
+    animation: fadeIn 3s;
+	animation-delay: 2s;
     }
 @keyframes fadeIn {
     0% { opacity: 0; }
