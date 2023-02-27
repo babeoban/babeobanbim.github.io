@@ -69,3 +69,46 @@ $(window).on('wheel', (event) => {
     }
   }
 });
+
+const phrases = ["Canhvjp", "Coder", "Youtuber", "Ditmenguvaner"];
+    typingText = document.getElementById("typing-text");
+let index2 = 0;
+
+function type() {
+  let phrase = phrases[index2];
+  let i = 0;
+  const typeInterval = setInterval(() => {
+    if (i <= phrase.length) {
+      typingText.textContent = phrase.substring(0, i);
+      i++;
+    } else {
+      clearInterval(typeInterval);
+      setTimeout(() => {
+        remove();
+      }, 500);
+    }
+  }, 100);
+}
+
+function remove() {
+  let phrase = phrases[index2];
+  let i = phrase.length;
+  const removeInterval = setInterval(() => {
+    if (i >= 0) {
+      typingText.textContent = phrase.substring(0, i);
+      i--;
+    } else {
+      clearInterval(removeInterval);
+      index2++;
+      if (index2 >= phrases.length) {
+        index2 = 0;
+      }
+      setTimeout(() => {
+        type();
+      }, 500);
+    }
+  }, 50);
+}
+
+type();
+
