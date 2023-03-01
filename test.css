@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: Arial;
 }
 
 body{
@@ -24,15 +24,15 @@ section:nth-child(1){
 
 section:nth-child(2){
   color: #1D212B;
-  background: #fff;
+  color: #1D212B;
 }
 
 section:nth-child(3){
-  color: #fff;
+  background-color: #fff;
 }
 
 section:nth-child(4){
-  color: #1D212B;
+  
   background: #fff;
 }
 
@@ -40,16 +40,18 @@ section .container{
   margin: 100px;
 }
 
-section h1{
-  font-size: 40px;
-}
-
 section h2{
   font-size: 40px;
   text-align: center;
   text-transform: uppercase;
 }
-
+.rightpad{
+  text-align: right;
+  color: #fff
+}
+.margin2{
+  margin-bottom: 15px;
+}
 section .cards{
   display: flex;
 }
@@ -68,23 +70,31 @@ section .cards .text-card h3{
 }
 
 @media (max-width: 600px){
-  section h1{
-    font-size: 40px;
-  }
 
   section .cards{
     flex-direction: column;
   }
 }
 
-.reveal{
+.ceveal{
   position: relative;
   transform: translateY(150px);
   opacity: 0;
   transition: all 2s ease;
 }
 
-.reveal.active{
+.ceveal.active{
+  transform: translateY(0px);
+  opacity: 1;
+}
+.bveal{
+  position: relative;
+  transform: translateX(-200px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+.bveal.active{
   transform: translateY(0px);
   opacity: 1;
 }
@@ -99,4 +109,197 @@ section .cards .text-card h3{
 .eveal.active{
   transform: translateX(0px);
   opacity: 1;
+}
+
+.ctn{
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f3f5f8;
+}
+nav{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  height: 80px;
+  line-height: 80px;
+  z-index: 111;
+}
+.logo{
+  display: flex;
+  font-size: 40px;
+  font-weight: 300;
+  color: rgb(0, 0, 0);
+}
+.navItems{
+  display: flex;
+}
+.navItems li{
+  list-style: none;
+  margin: 0 15px;
+}
+.navItems li a{
+  font-size: 25px;
+  color: #3d535f;
+  letter-spacing: 3px;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+}
+.navItems li:hover a{
+  color: #00a6ff;
+  transition: all 0.3s ease;
+}
+.warpper{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5%;
+  overflow: hidden;
+}
+.warpper2{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5%;
+  overflow: hidden;
+}
+.cols{
+  width: 80%;
+}
+.col0{
+  margin-right: 5%;
+}
+.col1{
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0%;
+}
+.pad1{
+  margin-bottom: 10px;
+}
+.topimg{
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0%;
+  margin-left: 60%;
+  margin-top: calc(15%);
+}
+.topline{
+  display: block;
+  position: relative;
+  font-size: 35px;
+  letter-spacing: 5px;
+  color: black;
+  margin-top: 25%;
+}
+.fsection{
+  animation: rIn 1.5s;
+  animation-delay: 0.5;
+}
+.fsection2{
+  animation: lIn 1.5s;
+  animation-delay: 0.5;
+}
+@keyframes rIn{
+  0%{
+    -webkit-transform: translateX(-200px);
+    opacity: 0;
+  }
+  100%{
+    -webkit-transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes lIn{
+  0%{
+    -webkit-transform: translateX(200px);
+    opacity: 0;
+  }
+  100%{
+    -webkit-transform: translateX(0px);
+    opacity: 1;
+  }
+}
+h1{
+  display: block;
+  font-size: 4em;
+  font-weight: 600;
+  color: black;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.btns{
+  width: 100%;
+  position: relative;
+  left: 150px;
+}
+button{
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 25px;
+  font-weight: 300;
+  color: white;
+  background-color: #3d535f;
+  padding: 8px 14px;
+  margin: 40px 5px;
+  text-transform: capitalize;
+  box-shadow: 0 5px 10px rgb(0, 0, 0);
+  transition: background-color 0.3s ease;
+  height: 60px;
+  width: 170px;
+  border-radius: 20%;
+
+}
+button:hover{
+  background-color: #00a6ff;
+  transition: background-color 0.3s ease;
+}
+.imgbox img{
+  position: relative;
+  height: 100%;
+  width: calc(130% - 80px);
+  top: -100px;
+  right: 50px;
+  animation: move 2s linear infinite;
+}
+@keyframes move {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: calc(100% - 50px);
+  }
+  100% {
+    top: 0;
+  }
+}
+.wr{
+  word-wrap: break-word;
+  text-align: justify;
+  line-height: 1.7;
+  color: black;
+}
+.wr2{
+  word-wrap: break-word;
+  line-height: 1.7;
+}
+.margin{
+  margin-bottom: 35px;
+}
+.topIn{
+  animation: topIn 0.9s;
+  background-color: #78668d;
+}
+@keyframes topIn{
+  0% {
+    -webkit-transform: translateY(-150px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+  }
 }

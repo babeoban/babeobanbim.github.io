@@ -1,7 +1,7 @@
-window.addEventListener('scroll', reveal);
+window.addEventListener('scroll', ceveal);
 
-    function reveal(){
-      var reveals = document.querySelectorAll('.reveal');
+    function ceveal(){
+      var reveals = document.querySelectorAll('.ceveal');
 
       for(var i = 0; i < reveals.length; i++){
 
@@ -17,6 +17,7 @@ window.addEventListener('scroll', reveal);
         }
       }
     }
+
 window.addEventListener('scroll', eveal);
 
     function eveal(){
@@ -70,7 +71,7 @@ $(window).on('wheel', (event) => {
   }
 });
 
-const phrases = ["Canhvjp", "Coder", "Youtuber", "Ditmenguvaner"];
+const phrases = ["Địt mẹ ngữ văn", "Địt mả bà ngữ văn", "Địt mả tổ ngữ văn", "Địt mẹ bộ giáo dục", "Địt tiên sư bộ giáo dục"];
     typingText = document.getElementById("typing-text");
 let index2 = 0;
 
@@ -112,3 +113,91 @@ function remove() {
 
 type();
 
+const scrollBtn = document.getElementById('scroll-btn');
+
+scrollBtn.addEventListener('click', () => {
+  const currentSection = document.querySelector('section:not([style*="none"])');
+  const nextSection = currentSection.nextElementSibling;
+  if (nextSection) {
+    const targetPosition = nextSection.offsetTop;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    const duration = 600; // in milliseconds
+    const easing = cubicBezier(0.42, 0, 0.58, 1);
+
+    let start = null;
+
+    const step = (timestamp) => {
+      if (!start) start = timestamp;
+      const progress = timestamp - start;
+      const easedProgress = easing(progress / duration);
+      const currentPosition = startPosition + distance * easedProgress;
+      window.scrollTo(0, currentPosition);
+      if (progress < duration) window.requestAnimationFrame(step);
+    };
+
+    window.requestAnimationFrame(step);
+  }
+});
+
+// cubic-bezier function
+function cubicBezier(x1, y1, x2, y2) {
+  const P1 = [0, 0];
+  const P2 = [x1, y1];
+  const P3 = [x2, y2];
+  const P4 = [1, 1];
+
+  return (t) => {
+    const [x, y] = cubicBezierPoint(t, P1, P2, P3, P4);
+    return y;
+  };
+}
+
+function cubicBezierPoint(t, P1, P2, P3, P4) {
+  const x = getCubicBezierCoordinate(t, P1[0], P2[0], P3[0], P4[0]);
+  const y = getCubicBezierCoordinate(t, P1[1], P2[1], P3[1], P4[1]);
+  return [x, y];
+}
+
+function getCubicBezierCoordinate(t, p1, p2, p3, p4) {
+  return (
+    p1 * (1 - t) ** 3 +
+    3 * p2 * t * (1 - t) ** 2 +
+    3 * p3 * t ** 2 * (1 - t) +
+    p4 * t ** 3
+  );
+}
+
+
+window.addEventListener('scroll', bveal);
+
+    function bveal(){
+      var reveals = document.querySelectorAll('.bveal');
+
+      for(var i = 0; i < reveals.length; i++){
+
+        var windowheight = window.innerHeight;
+        var revealtop = reveals[i].getBoundingClientRect().top;
+        var revealpoint = 150;
+
+        if(revealtop < windowheight - revealpoint){
+          reveals[i].classList.add('active');
+        }
+        else{
+          reveals[i].classList.remove('active');
+        }
+      }
+    }
+    
+const scrollButton = document.querySelector('.scroll-to-about');
+
+    // Add a click event listener to the <a> tag
+    scrollButton.addEventListener('click', (event) => {
+      event.preventDefault();
+    
+      // Get the element with the ID "About"
+      const aboutSection = document.getElementById('About');
+    
+      // Scroll to the top of the about section
+      aboutSection.scrollIntoView({behavior: 'smooth'});
+    });
