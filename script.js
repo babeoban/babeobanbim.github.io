@@ -189,15 +189,26 @@ window.addEventListener('scroll', bveal);
       }
     }
     
-const scrollButton = document.querySelector('.scroll-to-about');
+const scrollButtonAbout = document.querySelector('.scroll-to-about');
+const scrollButtonContent = document.querySelector('.scroll-to-content');
 
-    // Add a click event listener to the <a> tag
-    scrollButton.addEventListener('click', (event) => {
-      event.preventDefault();
-    
-      // Get the element with the ID "About"
-      const aboutSection = document.getElementById('About');
-    
-      // Scroll to the top of the about section
-      aboutSection.scrollIntoView({behavior: 'smooth'});
-    });
+scrollButtonAbout.addEventListener('click', (event) => {
+  event.preventDefault();
+  const aboutSection = document.getElementById('About');
+  aboutSection.scrollIntoView({behavior: 'smooth'});
+});
+
+scrollButtonContent.addEventListener('click', (event) => {
+  event.preventDefault();
+  const contentSection = document.getElementById('Content');
+  contentSection.scrollIntoView({behavior: 'smooth'});
+});
+
+function togglePopup() {
+  var popup = document.getElementById("popup");
+  if (popup.style.display === "none") {
+    popup.style.display = "block";
+  } else {
+    popup.style.display = "none";
+  }
+}

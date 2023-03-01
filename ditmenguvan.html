@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Địt mẹ ngữ văn!</title>
+    <link rel="shortcut icon" href="img/logo.ico">
     <link rel="stylesheet" href="test.css">
     <link rel="stylesheet" href="loop.css">
     <script src="jQuery-3.6.0.min.js"></script>
@@ -16,8 +17,8 @@
             <div class="logo">ĐỊT MẸ NGỮ VĂN</div>
             <ul class="navItems">
                 <li><a href="#" class="scroll-to-about">About</a></li>
-                <li><a href="#">Content</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#" class="scroll-to-content">Content</a></li>
+                <li><a href="#" onclick="togglePopup()">Contact</a></li>
                 <li><a href="#">Contribute</a></li>
             </ul>
         </nav>
@@ -38,6 +39,10 @@
               <img src="img/side.png" class="topimg">
             </div>
         </div>
+        <div id="popup" class="popup">
+          <h1 class="center">Contact!</h1>
+          <button>click</button>
+        </div>
     </div>
     </section>
     <section id="About">
@@ -54,32 +59,34 @@
 
       </div>
     </section>
-    <section>
+    <section id="Content">
       <div class="container ceveal">
         <h2 class="margin">Tại sao phải bỏ văn ra khỏi chương trình</h2>
         <div class="cards">
           <div class="warpper">
-            <div class="text-card cols col0">
+            <div class="text-card2 cols col0">
               <h3>Sự vô dụng của ngữ văn!</h3>
-              <p class="wr">Ngữ Văn là cái môn vô dụng nhất từng tồn tại. Vai trò của nó chỉ có hữu dụng khi nó còn là môn Tiếng Việt, khi mà lên cấp hai, cấp ba, nó trở thành một đống cứt không hơn không kém. Ngoài việc đã quá vô dụng và vớ vẩn so với các môn học khác thì nó còn không đáp ứng được
+              <p class="wr2">Ngữ Văn là cái môn vô dụng nhất từng tồn tại. Vai trò của nó chỉ có hữu dụng khi nó còn là môn Tiếng Việt, khi mà lên cấp hai, cấp ba, nó trở thành một đống cứt không hơn không kém. Ngoài việc đã quá vô dụng và vớ vẩn so với các môn học khác thì nó còn không đáp ứng được
                 những gì mà mọi người nói nó có thể làm. Nó không khiến chúng ta thêm yêu cuộc sống hay là giúp chúng ta hiểu hơn về xã hội xung quanh. Nó bắt chúng ta phải hiểu một thứ vừa vô dụng, vừa khó nhớ và không theo một quy luật nào cả. Những vấn đề được giải quyết và những tri 
                 thức mà chúng ta có thể tiếp nhận lại gần như là không có. Nhưng thông tin chúng ta nhận được không chỉ khô khan mà lại còn không có quy luật, phải học thuộc những thứ vô dụng. Thực ra đây là cách cái lũ 3 que hủy điệt Việt Nam!</p>
             </div>
-            <div class="text-card cols col1">
-              <h3>Title</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="text-card2 cols col1">
+              <h3>Độ khó giết người</h3>
+              <p class="wr2">Nói thật là không có một cái môn nào vừa khó vừa vô dụng như cái môn ngữ văn này, quá khó hiểu, quá lằng nhằng, phức tạp. Môn này phức tạp hóa vấn đề mà câu cú thì lại lủng củng, đọc thì không hiểu. Để hiểu thì có khi ngôn ngữ lập trình đọc còn dễ hiều hơn nhiều lần
+                còn về logic thì quá lằng nhằng so với đại số, còn về tưởng tượng thì khó hơn cả hình học. </p>
             </div>
-            <div class="text-card cols col2">
-              <h3>Title</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididust ut labore et dolore magna aliqua.</p>
+            <div class="text-card2 cols col2">
+              <h3>Sự Hủy Hoại Thế giới</h3>
+              <p class="wr2">Đây cũng là một phương pháp hủy hoại thế giới và cũng là một phương pháp marketing. Ngữ văn đã vô dụng đến vậy, nhưng nó còn bắt con người ta phải in ấn số lượng tài liệu, cộng với số lượng lớn sách với phải xuất ra sẽ tốn rất nhiều giấy, một phương pháp khiến cho 
+                chúng ta đẩy nhanh quá trình tàn phá thiên nhiên. Đây là ý đồ thâm độc, và Bộ giáo dục cần phải bị lên án sâu sắc!</p>
           </div>
         </div>
         </div>
       </div>
     </section>
     <section>
-      <div class="container eveal">
-        <h2>Your Title</h2>
+      <div class="container ceveal">
+        <h2 class="op">Vạch trần tội ác kinh hoàng của bộ giáo dục!</h2>
         <div class="cards">
           <div class="text-card">
             <h3>Title</h3>
