@@ -246,9 +246,8 @@ function toggleContribute() {
 }
 
 
-var idx2 = false
 function toggleAbout() {
-  if (idx2) {
+  if (idx) {
     return
   }
   var popup = document.createElement("div");
@@ -274,7 +273,7 @@ function toggleAbout() {
   closeBtn.className = "close-button";
   closeBtn.onclick = function() {
     document.body.removeChild(popup);
-    idx2 = false
+    idx = false
   }
   popup.appendChild(closeBtn);
   
@@ -282,5 +281,5 @@ function toggleAbout() {
   popup.style.color = "#333";
   popup.style.fontSize = "18px";
   popup.style.backgroundColor = "#f1f1f1";
-  idx2 = true
+  idx = true
 }
