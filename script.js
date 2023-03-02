@@ -44,33 +44,6 @@ const sections = $('section');
 // initialize the index to 0
 let index = 0;
 
-// listen for scroll events on the window
-$(window).on('wheel', (event) => {
-  // check if the user has scrolled up or down
-  const direction = event.originalEvent.deltaY > 0 ? 'down' : 'up';
-
-  // check if the user has scrolled to the bottom or top of the current section
-  const sectionBottom = sections.eq(index).offset().top + sections.eq(index).outerHeight();
-  const sectionTop = sections.eq(index).offset().top;
-  const windowBottom = $(window).scrollTop() + $(window).height();
-
-  if ((direction === 'down' && sectionBottom <= windowBottom) ||
-      (direction === 'up' && sectionTop >= $(window).scrollTop())) {
-    // if so, increment or decrement the index based on the direction and scroll to the next section
-    if (direction === 'down' && index < sections.length - 1) {
-      index++;
-      $('html, body').animate({
-        scrollTop: sections.eq(index).offset().top
-      }, 800);
-    } else if (direction === 'up' && index > 0) {
-      index--;
-      $('html, body').animate({
-        scrollTop: sections.eq(index).offset().top
-      }, 800);
-    }
-  }
-});
-
 const phrases = ["Địt mẹ ngữ văn", "Địt mả bà ngữ văn", "Địt mả tổ ngữ văn", "Địt mẹ bộ giáo dục", "Địt tiên sư bộ giáo dục"];
     typingText = document.getElementById("typing-text");
 let index2 = 0;
@@ -273,7 +246,7 @@ function toggleAbout() {
   <h1 class="center">Info</h1>
     <p class="black">Web dev: Canhvjp<br>
       120 lines of HTML code<br>
-      320 lines of javascript<br>
+      290 lines of javascript<br>
       390 lines of CSS<br>
       <a href="lincense.html">Lincense! (MIT LINCENSE)</a><br>
       <a href="https://github.com/babeoban/babeoban.github.io">Source code!</a>
