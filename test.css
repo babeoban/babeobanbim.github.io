@@ -274,7 +274,9 @@ button{
   height: 60px;
   width: 170px;
   border-radius: 20%;
-
+}
+.black{
+  color:rgb(0, 0, 0)
 }
 button:hover{
   background-color: #00a6ff;
@@ -343,7 +345,31 @@ button:hover{
 }
 
 .popup {
-  height: 600px;
-  width: 1000px;
+  height: 300px;
+  width: 400px;
+}
+
+
+.ctrbup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 680px;
+  height: 750px;
+  border: 1px solid #ccc;
+  z-index: 9999;
+  padding: 20px;
+  text-align: center;
+}
+
+.close-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ccc;
+  text-decoration: none;
 }
 

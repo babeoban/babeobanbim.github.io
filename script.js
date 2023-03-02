@@ -212,3 +212,35 @@ function togglePopup() {
     popup.style.display = "none";
   }
 }
+
+var idx = false
+function toggleContribute() {
+  if (idx) {
+    return
+  }
+  var popup = document.createElement("div");
+  
+  // Update the popup's HTML content
+  popup.innerHTML = `
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeObz1mfIWLfLX8y8p3SSoC2wDwg1-Pr4DPGzgGktgwDffXsw/viewform?embedded=true" width="640" height="700" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  `;
+  
+  popup.className = "ctrbup";
+  document.body.appendChild(popup);
+  
+  var closeBtn = document.createElement("a");
+  closeBtn.innerHTML = "&times;";
+  closeBtn.href = "#";
+  closeBtn.className = "close-button";
+  closeBtn.onclick = function() {
+    document.body.removeChild(popup);
+    idx = false
+  }
+  popup.appendChild(closeBtn);
+  
+  // Update the popup's CSS styling
+  popup.style.color = "#333";
+  popup.style.fontSize = "18px";
+  popup.style.backgroundColor = "#f1f1f1";
+  idx = true
+}
