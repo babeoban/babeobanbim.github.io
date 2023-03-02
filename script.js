@@ -227,6 +227,22 @@ function toggleContribute() {
   
   popup.className = "ctrbup";
   document.body.appendChild(popup);
+// Add scale animation on popup display
+popup.animate(
+  [
+    // Initial state: small and transparent
+    { transform: 'scale(0.5)', opacity: 0, left: '50%', top: '50%' },
+    // Intermediate state: grow and become opaque
+    { transform: 'scale(1.1)', opacity: 0.8, left: '50%', top: '50%' },
+    // Final state: shrink slightly and settle
+    { transform: 'scale(1)', opacity: 1, left: '50%', top: '50%', transform: 'translate(-50%, -50%)' }
+  ],
+  {
+    duration: 500, // animation duration in milliseconds
+    easing: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)' // animation easing function
+  }
+);
+
   
   var closeBtn = document.createElement("a");
   closeBtn.innerHTML = "&times;";
@@ -266,6 +282,22 @@ function toggleAbout() {
   
   popup.className = "abtbup";
   document.body.appendChild(popup);
+// Add scale animation on popup display
+popup.animate(
+  [
+    // Initial state: small and transparent
+    { transform: 'scale(0.5)', opacity: 0, left: '50%', top: '50%' },
+    // Intermediate state: grow and become opaque
+    { transform: 'scale(1.1)', opacity: 0.8, left: '50%', top: '50%' },
+    // Final state: shrink slightly and settle
+    { transform: 'scale(1)', opacity: 1, left: '50%', top: '50%', transform: 'translate(-50%, -50%)' }
+  ],
+  {
+    duration: 500, // animation duration in milliseconds
+    easing: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)' // animation easing function
+  }
+);
+
   
   var closeBtn = document.createElement("a");
   closeBtn.innerHTML = "&times;";
