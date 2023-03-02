@@ -58,13 +58,13 @@ section .cards{
 section .cards .text-card{
   background: #ffffff;
   margin: 20px;
-  height: 600px;
+  height: 650px;
   padding: 20px;
 }
 section .cards .text-card2{
   background: #3b3b3b;
   margin: 20px;
-  height: 600px;
+  height: 650px;
   padding: 20px;
 }
 .op{
@@ -80,7 +80,7 @@ section .cards .text-card h3{
   font-size: 30px;
   text-align: center;
   text-transform: uppercase;
-  margin-bottom: 1px;
+  margin-bottom: 10px;
 }
 
 section .cards .text-card2 h3{
@@ -346,3 +346,4 @@ button:hover{
   height: 600px;
   width: 1000px;
 }
+
