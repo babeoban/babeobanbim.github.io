@@ -273,7 +273,7 @@ function toggleAbout() {
   <h1 class="center">Info</h1>
     <p class="black">Web dev: Canhvjp<br>
       120 lines of HTML code<br>
-      290 lines of javascript<br>
+      320 lines of javascript<br>
       390 lines of CSS<br>
       <a href="lincense.html">Lincense! (MIT LINCENSE)</a><br>
       <a href="https://github.com/babeoban/babeoban.github.io">Source code!</a>
