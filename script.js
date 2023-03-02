@@ -44,7 +44,7 @@ const sections = $('section');
 // initialize the index to 0
 let index = 0;
 
-const phrases = ["Địt mẹ ngữ văn", "Địt mả bà ngữ văn", "Địt mả tổ ngữ văn", "Địt mẹ bộ giáo dục", "Địt tiên sư bộ giáo dục"];
+const phrases = ["#DMNV", "Địt mẹ ngữ văn", "Địt mả bà ngữ văn", "Địt mả tổ ngữ văn", "Địt mẹ bộ giáo dục", "Địt tiên sư bộ giáo dục"];
     typingText = document.getElementById("typing-text");
 let index2 = 0;
 
@@ -157,7 +157,7 @@ window.addEventListener('scroll', bveal);
           reveals[i].classList.add('active');
         }
         else{
-          reveals[i].classList.remove('active');
+          reveals[i].classList.remove('active');scrollIntoView
         }
       }
     }
@@ -234,6 +234,56 @@ popup.animate(
   idx = true
 }
 
+function toggleDev() {
+  if (idx) {
+    return
+  }
+  var popup = document.createElement("div");
+  
+  // Update the popup's HTML content
+  popup.innerHTML = `
+  <h1>Development log</h1>
+  <h2>Bug fix</h2>
+  <p>Fix scrolling problem</p>
+  <h2>Added</h2>
+  <p>Devlog hyperlink at header</p>
+  `;
+  
+  popup.className = "devbup";
+  document.body.appendChild(popup);
+// Add scale animation on popup display
+popup.animate(
+  [
+    // Initial state: small and transparent
+    { transform: 'scale(0.5)', opacity: 0, left: '50%', top: '50%' },
+    // Intermediate state: grow and become opaque
+    { transform: 'scale(1.1)', opacity: 0.8, left: '50%', top: '50%' },
+    // Final state: shrink slightly and settle
+    { transform: 'scale(1)', opacity: 1, left: '50%', top: '50%', transform: 'translate(-50%, -50%)' }
+  ],
+  {
+    duration: 500, // animation duration in milliseconds
+    easing: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)' // animation easing function
+  }
+);
+
+  
+  var closeBtn = document.createElement("a");
+  closeBtn.innerHTML = "&times;";
+  closeBtn.href = "#";
+  closeBtn.className = "close-button";
+  closeBtn.onclick = function() {
+    document.body.removeChild(popup);
+    idx = false
+  }
+  popup.appendChild(closeBtn);
+  
+  // Update the popup's CSS styling
+  popup.style.color = "#333";
+  popup.style.fontSize = "18px";
+  popup.style.backgroundColor = "#f1f1f1";
+  idx = true
+}
 
 function toggleAbout() {
   if (idx) {
@@ -288,3 +338,53 @@ popup.animate(
   popup.style.backgroundColor = "#f1f1f1";
   idx = true
 }
+
+const sectionscroll = () => {
+  // Function to get all of the sections on the page
+  const sections = document.querySelectorAll('section');
+  // Set the currently active section to the first one
+  let currentSection = 0;
+
+  // Function to scroll to a given section
+  const scrollToSection = (sectionIndex) => {
+    sections[sectionIndex].scrollIntoView({ behavior: 'smooth' });
+    currentSection = sectionIndex;
+  };
+
+  // Event listener for scrolling
+  window.addEventListener('wheel', (event) => {
+    // Check if the user has scrolled using the mouse wheel or touchpad
+    if (!event.ctrlKey && !event.shiftKey && !event.altKey) {
+      event.preventDefault();
+      const direction = event.deltaY > 0 ? 1 : -1;
+      const nextSection = currentSection + direction;
+      // Only scroll if the next section exists
+      if (sections[nextSection]) {
+        scrollToSection(nextSection);
+      }
+    }
+  });
+
+  // Event listener for non-mouse wheel or touchpad scrolling
+  window.addEventListener('scroll', () => {
+    // Check if the user has scrolled using a non-mouse wheel or touchpad method
+    if (window.scrollY !== sections[currentSection].offsetTop) {
+      // Prevent default scrolling behavior
+      event.preventDefault();
+      // Find the nearest section and scroll to it
+      let nearestSection = 0;
+      let smallestDifference = Infinity;
+      for (let i = 0; i < sections.length; i++) {
+        const difference = Math.abs(sections[i].offsetTop - window.scrollY);
+        if (difference < smallestDifference) {
+          smallestDifference = difference;
+          nearestSection = i;
+        }
+      }
+      scrollToSection(nearestSection);
+    }
+  });
+};
+
+// Call sectionscroll function to initialize scrolling
+sectionscroll();

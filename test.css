@@ -15,7 +15,7 @@ section{
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
 }
 
 section:nth-child(1){
@@ -23,7 +23,6 @@ section:nth-child(1){
 }
 
 section:nth-child(2){
-  color: #1D212B;
   color: #1D212B;
 }
 
@@ -357,6 +356,19 @@ button:hover{
   transform: translate(-50%, -50%);
   width: 680px;
   height: 750px;
+  border: 1px solid #ccc;
+  z-index: 9999;
+  padding: 20px;
+  text-align: center;
+}
+
+.devbup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 680px;
+  height: 250px;
   border: 1px solid #ccc;
   z-index: 9999;
   padding: 20px;
