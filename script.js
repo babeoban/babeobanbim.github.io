@@ -244,3 +244,43 @@ function toggleContribute() {
   popup.style.backgroundColor = "#f1f1f1";
   idx = true
 }
+
+
+var idx2 = false
+function toggleAbout() {
+  if (idx2) {
+    return
+  }
+  var popup = document.createElement("div");
+  
+  // Update the popup's HTML content
+  popup.innerHTML = `
+  <h1 class="center">Info</h1>
+    <p class="black">Web dev: Canhvjp<br>
+      120 lines of HTML code<br>
+      290 lines of javascript<br>
+      390 lines of CSS<br>
+      <a href="lincense.html">Lincense! (MIT LINCENSE)</a><br>
+      <a href="https://github.com/babeoban/babeoban.github.io">Source code!</a>
+    </p>
+  `;
+  
+  popup.className = "abtbup";
+  document.body.appendChild(popup);
+  
+  var closeBtn = document.createElement("a");
+  closeBtn.innerHTML = "&times;";
+  closeBtn.href = "#";
+  closeBtn.className = "close-button";
+  closeBtn.onclick = function() {
+    document.body.removeChild(popup);
+    idx2 = false
+  }
+  popup.appendChild(closeBtn);
+  
+  // Update the popup's CSS styling
+  popup.style.color = "#333";
+  popup.style.fontSize = "18px";
+  popup.style.backgroundColor = "#f1f1f1";
+  idx2 = true
+}
