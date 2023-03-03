@@ -34,10 +34,19 @@ section:nth-child(4){
   background-color: #1D212B;
 }
 
+section:nth-child(5){
+  -webkit-text-fill-color: #fff;
+  background-color: #2f4e9e;
+  text-align: center;
+}
+
 section .container{
   margin: 100px;
 }
-
+.side{
+  margin-left: 20%;
+  margin-right: 20%;
+}
 section h2{
   font-size: 40px;
   text-align: center;

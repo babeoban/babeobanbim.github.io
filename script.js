@@ -243,10 +243,7 @@ function toggleDev() {
   // Update the popup's HTML content
   popup.innerHTML = `
   <h1>Development log</h1>
-  <h2>Bug fix</h2>
-  <p>Fix scrolling problem</p>
-  <h2>Added</h2>
-  <p>Devlog hyperlink at header</p>
+  <p>Địt con cụ bộ giáo dục</p>
   `;
   
   popup.className = "devbup";
