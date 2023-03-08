@@ -155,6 +155,7 @@ window.addEventListener('scroll', bveal);
 
         if(revealtop < windowheight - revealpoint){
           reveals[i].classList.add('active');
+
         }
         else{
           reveals[i].classList.remove('active');scrollIntoView
@@ -187,6 +188,7 @@ function togglePopup() {
 }
 
 var idx = false
+var idxa = false
 function toggleContribute() {
   if (idx) {
     return
@@ -235,15 +237,16 @@ popup.animate(
 }
 
 function toggleDev() {
-  if (idx) {
+  if (idxa) {
     return
   }
   var popup = document.createElement("div");
   
   // Update the popup's HTML content
   popup.innerHTML = `
-  <h1>Development log</h1>
-  <p>Địt con cụ bộ giáo dục</p>
+  <h1>Dev log</h1>
+  <p>Moved development log</p>
+  <p>Adding button style</p>
   `;
   
   popup.className = "devbup";
@@ -271,7 +274,7 @@ popup.animate(
   closeBtn.className = "close-button";
   closeBtn.onclick = function() {
     document.body.removeChild(popup);
-    idx = false
+    idxa = false
   }
   popup.appendChild(closeBtn);
   
@@ -279,7 +282,7 @@ popup.animate(
   popup.style.color = "#333";
   popup.style.fontSize = "18px";
   popup.style.backgroundColor = "#f1f1f1";
-  idx = true
+  idxa = true
 }
 
 function toggleAbout() {
@@ -292,11 +295,14 @@ function toggleAbout() {
   popup.innerHTML = `
   <h1 class="center">Info</h1>
     <p class="black">Web dev: Canhvjp<br>
-      120 lines of HTML code<br>
+      130 lines of HTML code<br>
       390 lines of javascript<br>
-      400 lines of CSS<br>
+      410 lines of CSS<br>
       <a href="lincense.html">Lincense! (MIT LINCENSE)</a><br>
       <a href="https://github.com/babeoban/babeoban.github.io">Source code!</a>
+      <div class="buttons">
+        <button onclick="toggleDev()" class="btn-hover color-5">Dev log</button>
+      </div>
     </p>
   `;
   
