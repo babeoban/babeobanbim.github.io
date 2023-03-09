@@ -44,7 +44,7 @@ const sections = $('section');
 // initialize the index to 0
 let index = 0;
 
-const phrases = ["#DMNV", "Địt mẹ ngữ văn", "Địt mả bà ngữ văn", "Địt mả tổ ngữ văn", "Địt mẹ bộ giáo dục", "Địt tiên sư bộ giáo dục", "SKZ chimbe"];
+const phrases = ["#DMNV", "Địt mẹ ngữ văn", "Địt mả bà ngữ văn", "Địt mả tổ ngữ văn", "Địt mẹ bộ giáo dục", "Địt tiên sư bộ giáo dục", "soulcrap chimbe"];
     typingText = document.getElementById("typing-text");
 let index2 = 0;
 
